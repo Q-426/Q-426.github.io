@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Q-426 Evolution">
 <meta property="og:description" content="1. var let const 声明时：1. var的声明存在变量提升12console.log(a);&#x2F;&#x2F;undefinedvar a &#x3D; 10;  2. let的声明不存在变量提升12console.log(b);&#x2F;&#x2F;报错,b is not definedlet b &#x3D; 10; 3. const的声明不存在变量提升12console.log(c);&#x2F;&#x2F;报错,c is not definedc">
 <meta property="article:published_time" content="2020-05-04T10:11:56.000Z">
-<meta property="article:modified_time" content="2020-05-04T11:59:40.290Z">
+<meta property="article:modified_time" content="2020-05-05T01:50:17.898Z">
 <meta property="article:author" content="Q-426">
 <meta property="article:tag" content="const">
 <meta property="article:tag" content="let">
@@ -183,7 +183,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -193,7 +193,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -203,7 +203,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/%20" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -213,7 +213,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/%20" rel="section">
+          <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -223,7 +223,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/%20" rel="section">
+          <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -323,6 +323,17 @@
 
                 
                 
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js%E5%9F%BA%E7%A1%80/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">前端基础</span>
+                  </a>
+                </span>
+
+                
+                
               
             </span>
           
@@ -370,8 +381,6 @@
 <p>当前块级作用域中存在a使用let/const声明的情况下，给a赋值10时，只会在当前作用域中找变量a,而此时，还未到let声明时，所以会<br>Error:a is not defined;<br>此时a存在于TDZ中;</p>
 <h2 id="6-const"><a href="#6-const" class="headerlink" title="6. const:"></a>6. const:</h2><p>const声明的是一个常量，常量即不可改变；但是，js中，常量也会存在俩种情况：<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基本类型的常量不可改变；</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="number">1</span>;</span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="comment">//TypeError:Assignment to constant variable;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//引用类型的常量；</span></span><br><span class="line">存储在<span class="keyword">const</span>后的标识符是引用类型的地址，只要不尝试修改其地址即可；</span><br><span class="line"><span class="keyword">const</span> a = &#123;</span><br><span class="line">  name: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line">a.name = <span class="number">2</span>;</span><br><span class="line">&#123;<span class="attr">name</span>: <span class="number">2</span>&#125;</span><br><span class="line"><span class="comment">//假如尝试修改引用类型的地址，则会报错：</span></span><br><span class="line"><span class="keyword">const</span> a = &#123;</span><br><span class="line">name: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">a = &#123;&#125;;<span class="comment">//报错</span></span><br></pre></td></tr></table></figure><br>const在声明语句的时候，必须给一个初始值；</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> b;<span class="comment">//报错：SyntaxError:Missing initializer in const declaration.</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-
       
     </div>
     
@@ -472,7 +481,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/%20%7C%7C%20archive">
+                <a href="/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">日志</span>
@@ -485,7 +494,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>

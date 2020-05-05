@@ -179,7 +179,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -189,7 +189,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -199,7 +199,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/%20" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -209,7 +209,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/%20" rel="section">
+          <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -219,7 +219,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/%20" rel="section">
+          <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -321,6 +321,17 @@
 
                 
                 
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js%E5%9F%BA%E7%A1%80/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">前端基础</span>
+                  </a>
+                </span>
+
+                
+                
               
             </span>
           
@@ -352,23 +363,12 @@
 
       
         
-          <h2 id="1-var-let-const-声明时："><a href="#1-var-let-const-声明时：" class="headerlink" title="1. var let const 声明时："></a>1. var let const 声明时：</h2><h3 id="1-var的声明存在变量提升"><a href="#1-var的声明存在变量提升" class="headerlink" title="1. var的声明存在变量提升"></a>1. var的声明存在变量提升</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+          
+          1. var let const 声明时：1. var的声明存在变量提升12console.log(a);//undefinedvar a = 10;
 
-<h3 id="2-let的声明不存在变量提升"><a href="#2-let的声明不存在变量提升" class="headerlink" title="2. let的声明不存在变量提升"></a>2. let的声明不存在变量提升</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(b);<span class="comment">//报错,b is not defined</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="3-const的声明不存在变量提升"><a href="#3-const的声明不存在变量提升" class="headerlink" title="3. const的声明不存在变量提升"></a>3. const的声明不存在变量提升</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(c);<span class="comment">//报错,c is not defined</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-var声明的变量会挂载在window上，而let和const声明的变量不会挂载在window上。"><a href="#2-var声明的变量会挂载在window上，而let和const声明的变量不会挂载在window上。" class="headerlink" title="2. var声明的变量会挂载在window上，而let和const声明的变量不会挂载在window上。"></a>2. var声明的变量会挂载在window上，而let和const声明的变量不会挂载在window上。</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a,<span class="built_in">window</span>.a);<span class="comment">//10,10</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(b,<span class="built_in">window</span>.b);<span class="comment">//10,undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(c,<span class="built_in">window</span>.c);<span class="comment">//10,undefined</span></span><br></pre></td></tr></table></figure>
-<h2 id="3-let和const声明会形成块作用域，var则不会"><a href="#3-let和const声明会形成块作用域，var则不会" class="headerlink" title="3. let和const声明会形成块作用域，var则不会;"></a>3. let和const声明会形成块作用域，var则不会;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="number">1</span>)&#123;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">100</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//10</span></span><br><span class="line"><span class="built_in">console</span>.log(b);<span class="comment">//报错，b is not defined;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="number">1</span>)&#123;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> c = <span class="number">100</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//10</span></span><br><span class="line"><span class="built_in">console</span>.log(c);<span class="comment">//报错,c is not defined;</span></span><br></pre></td></tr></table></figure>
-<p>典型例题:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;,<span class="number">0</span>);</span><br><span class="line">&#125;;<span class="comment">// 3,3,3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i &lt; <span class="number">3</span>;i++)&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">  &#125;,<span class="number">0</span>);</span><br><span class="line">&#125;;<span class="comment">// 0,1,2</span></span><br></pre></td></tr></table></figure>
-
-<p>为何同样的声明，为什么var和let的结果不同呢？<br>因为let相对于var会形成块级作用域；<br>let出现在类似for循环时，会有特殊的表现；js引擎会为for后面跟的大括号每次都创建一个词法环境，将let声明的变量每次都拷贝一份都这个词法环境中，也就是说每次执行的for的函数体里的i，都是一个同名的副本，所以每次setTimeout中绑定的号也就是那个同名副本</p>
-<h2 id="4-同一作用域下let和const不能声明同名变量；var则可以；"><a href="#4-同一作用域下let和const不能声明同名变量；var则可以；" class="headerlink" title="4. 同一作用域下let和const不能声明同名变量；var则可以；"></a>4. 同一作用域下let和const不能声明同名变量；var则可以；</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//100</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">100</span>;</span><br><span class="line"><span class="comment">//报错，Identifier 'a' has already been declared; </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//不同作用域下</span></span><br><span class="line">&#123;<span class="keyword">const</span> b = <span class="number">10</span>;&#125;</span><br><span class="line"><span class="keyword">const</span> b = <span class="number">10</span>;</span><br><span class="line">不会报错</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-js在扫描发现变量声明时，要么将他们提升到作用域顶部（遇到var声明）-要么将声明放在临时性死区（TDZ）中（遇到let和const-声明）"><a href="#5-js在扫描发现变量声明时，要么将他们提升到作用域顶部（遇到var声明）-要么将声明放在临时性死区（TDZ）中（遇到let和const-声明）" class="headerlink" title="5. js在扫描发现变量声明时，要么将他们提升到作用域顶部（遇到var声明）;要么将声明放在临时性死区（TDZ）中（遇到let和const 声明）;"></a>5. js在扫描发现变量声明时，要么将他们提升到作用域顶部（遇到var声明）;要么将声明放在临时性死区（TDZ）中（遇到let和const 声明）;</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="number">1</span>)&#123;</span><br><span class="line">  a = <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当前块级作用域中存在a使用let/const声明的情况下，给a赋值10时，只会在当前作用域中找变量a,而此时，还未到let声明时，所以会<br>Error:a is not defined;<br>此时a存在于TDZ中;</p>
-<h2 id="6-const"><a href="#6-const" class="headerlink" title="6. const:"></a>6. const:</h2><p>const声明的是一个常量，常量即不可改变；但是，js中，常量也会存在俩种情况：<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基本类型的常量不可改变；</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="number">1</span>;</span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="comment">//TypeError:Assignment to constant variable;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//引用类型的常量；</span></span><br><span class="line">存储在<span class="keyword">const</span>后的标识符是引用类型的地址，只要不尝试修改其地址即可；</span><br><span class="line"><span class="keyword">const</span> a = &#123;</span><br><span class="line">  name: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line">a.name = <span class="number">2</span>;</span><br><span class="line">&#123;<span class="attr">name</span>: <span class="number">2</span>&#125;</span><br><span class="line"><span class="comment">//假如尝试修改引用类型的地址，则会报错：</span></span><br><span class="line"><span class="keyword">const</span> a = &#123;</span><br><span class="line">name: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">a = &#123;&#125;;<span class="comment">//报错</span></span><br></pre></td></tr></table></figure><br>const在声明语句的时候，必须给一个初始值；</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> b;<span class="comment">//报错：SyntaxError:Missing initializer in const declaration.</span></span><br></pre></td></tr></table></figure>
+2. let的声明不存在变量提升12console.log(b);//报错,b is not definedlet b = 10;
+3. cons
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/05/04/var%E3%80%81let%E5%92%8Cconst%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/#more" rel="contents">
@@ -453,7 +453,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/%20%7C%7C%20archive">
+                <a href="/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">日志</span>
@@ -466,7 +466,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
