@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="new," />
 
 
 
@@ -79,13 +79,16 @@
 
 
 
-<meta name="description" content="功不唐捐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Q-426 Evolution">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="1. 创建一个全新的对象相当于var obj &#x3D; {};这样，创建了一个Object实例，在内存中开辟了一块空间。 2. 这个新对象会被执行[[prototype]]连接首先说这个 [[Prototype]], 我们都知道原型链这个东西, 原型链的寻找过程其实不是 xxx.prototype 指向的那个东西依次向上找, 而是一个内部的指针 [[Prototype]] 的依次向上寻找, 也就是各大浏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaScript中new的作用">
+<meta property="og:url" content="http://yoursite.com/2020/05/05/javaScript%E4%B8%ADnew%E7%9A%84%E4%BD%9C%E7%94%A8/index.html">
 <meta property="og:site_name" content="Q-426 Evolution">
-<meta property="og:description" content="功不唐捐">
+<meta property="og:description" content="1. 创建一个全新的对象相当于var obj &#x3D; {};这样，创建了一个Object实例，在内存中开辟了一块空间。 2. 这个新对象会被执行[[prototype]]连接首先说这个 [[Prototype]], 我们都知道原型链这个东西, 原型链的寻找过程其实不是 xxx.prototype 指向的那个东西依次向上找, 而是一个内部的指针 [[Prototype]] 的依次向上寻找, 也就是各大浏">
+<meta property="article:published_time" content="2020-05-05T05:36:01.000Z">
+<meta property="article:modified_time" content="2020-05-05T05:37:03.928Z">
 <meta property="article:author" content="Q-426">
+<meta property="article:tag" content="new">
 <meta name="twitter:card" content="summary">
 
 
@@ -116,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/05/05/javaScript中new的作用/"/>
 
 
 
 
 
-  <title>Q-426 Evolution</title>
+  <title>javaScript中new的作用 | Q-426 Evolution</title>
   
 
 
@@ -141,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,9 +247,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -277,9 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/05/javaScript%E4%B8%ADnew%E7%9A%84%E4%BD%9C%E7%94%A8/" itemprop="url">javaScript中new的作用</a></h1>
+          <h1 class="post-title" itemprop="name headline">javaScript中new的作用</h1>
         
 
         <div class="post-meta">
@@ -362,19 +362,15 @@
       
 
       
-        
-          
-          1. 创建一个全新的对象相当于var obj = {};这样，创建了一个Object实例，在内存中开辟了一块空间。
-2. 这个新对象会被执行[[prototype]]连接首先说这个 [[Prototype]], 我们都知道原型链这个东西, 原型链的寻找过程其实不是 xxx.prototype 指向的
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/05/05/javaScript%E4%B8%ADnew%E7%9A%84%E4%BD%9C%E7%94%A8/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h2 id="1-创建一个全新的对象"><a href="#1-创建一个全新的对象" class="headerlink" title="1. 创建一个全新的对象"></a>1. 创建一个全新的对象</h2><p>相当于var obj = {};这样，创建了一个Object实例，在内存中开辟了一块空间。</p>
+<h2 id="2-这个新对象会被执行-prototype-连接"><a href="#2-这个新对象会被执行-prototype-连接" class="headerlink" title="2. 这个新对象会被执行[[prototype]]连接"></a>2. 这个新对象会被执行[[prototype]]连接</h2><p>首先说这个 [[Prototype]], 我们都知道原型链这个东西, 原型链的寻找过程其实不是 xxx.prototype 指向的那个东西依次向上找, 而是一个内部的指针 [[Prototype]] 的依次向上寻找, 也就是各大浏览器里面实现的 <strong>proto</strong> 这个东西</p>
+<p>新对象被执行[[prototype]]连接，其实要做的事就是</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.__proto__ = Person.prototype;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-新对象绑定到函数调用的this"><a href="#3-新对象绑定到函数调用的this" class="headerlink" title="3. 新对象绑定到函数调用的this"></a>3. 新对象绑定到函数调用的this</h2><p>在new后面跟着的构造函数，在这条语句执行之前，内部的this指向全部都被指定为新生成的这个obj</p>
+<h2 id="4-如果函数没有返回其他对象-那么-new-表达式中的函数调用会自动返回这个新对象"><a href="#4-如果函数没有返回其他对象-那么-new-表达式中的函数调用会自动返回这个新对象" class="headerlink" title="4. 如果函数没有返回其他对象, 那么 new 表达式中的函数调用会自动返回这个新对象"></a>4. 如果函数没有返回其他对象, 那么 new 表达式中的函数调用会自动返回这个新对象</h2><p>这句话的意思, 就是说, 我在构造函数的最后 return {obj : 1} 出来, 最后生成的不会是那个实例, 而会是 {obj : 1}</p>
+<p>需要注意的一点就是, 这里所说的没有返回其他对象, 必须是对象, 加入你是 return 1, 还是会生成实例而不是那个 1</p>
+
       
     </div>
     
@@ -389,337 +385,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/05/javascript%E4%B8%ADthis%E7%9A%84%E7%94%A8%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Q-426">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Q-426 Evolution">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/05/javascript%E4%B8%ADthis%E7%9A%84%E7%94%A8%E6%B3%95/" itemprop="url">javaScript中this的用法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-05T13:31:08+08:00">
-                2020-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">js基础</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js%E5%9F%BA%E7%A1%80/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">前端基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/new/" rel="tag"># new</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-          this是什么？每个函数的this是在调用的时候进行绑定的，只有当函数调用的时候才会涉及到this的各种问题。不在函数调用里面，都会指向全局对象，browser里面的window、node环境下的global。
-this的绑定1.
-1234function foo()&#123;  console.
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/05/05/javascript%E4%B8%ADthis%E7%9A%84%E7%94%A8%E6%B3%95/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/05/javascript%E4%B8%ADthis%E7%9A%84%E7%94%A8%E6%B3%95/" rel="next" title="javaScript中this的用法">
+                <i class="fa fa-chevron-left"></i> javaScript中this的用法
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/04/var%E3%80%81let%E5%92%8Cconst%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Q-426">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Q-426 Evolution">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/04/var%E3%80%81let%E5%92%8Cconst%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/" itemprop="url">var、let和const之间的区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-04T18:11:56+08:00">
-                2020-05-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">js基础</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js%E5%9F%BA%E7%A1%80/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">前端基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          1. var let const 声明时：1. var的声明存在变量提升12console.log(a);//undefinedvar a = 10;
-
-2. let的声明不存在变量提升12console.log(b);//报错,b is not definedlet b = 10;
-3. cons
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/05/04/var%E3%80%81let%E5%92%8Cconst%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -729,10 +424,11 @@ this的绑定1.
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -740,6 +436,10 @@ this的绑定1.
 
 
           
+
+  
+
+
 
         </div>
         
@@ -760,8 +460,17 @@ this的绑定1.
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -821,6 +530,22 @@ this的绑定1.
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-创建一个全新的对象"><span class="nav-number">1.</span> <span class="nav-text">1. 创建一个全新的对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-这个新对象会被执行-prototype-连接"><span class="nav-number">2.</span> <span class="nav-text">2. 这个新对象会被执行[[prototype]]连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-新对象绑定到函数调用的this"><span class="nav-number">3.</span> <span class="nav-text">3. 新对象绑定到函数调用的this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-如果函数没有返回其他对象-那么-new-表达式中的函数调用会自动返回这个新对象"><span class="nav-number">4.</span> <span class="nav-text">4. 如果函数没有返回其他对象, 那么 new 表达式中的函数调用会自动返回这个新对象</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -954,6 +679,10 @@ this的绑定1.
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
